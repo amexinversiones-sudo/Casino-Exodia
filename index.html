@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino Privado - Amigos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎰 CASINO PRIVADO</h1>
+            <div class="user-info">
+                <span id="userName">Invitado</span>
+                <div class="balance">$<span id="balance">10,000</span></div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="welcome-section">
+                <h2>¡Bienvenido al Casino!</h2>
+                <p>Juega con amigos de forma segura</p>
+            </div>
+
+            <div class="games-grid">
+                <div class="game-card" onclick="selectGame('blackjack')">
+                    <div class="game-icon">♠️</div>
+                    <h3>Blackjack</h3>
+                    <p>21 puntos</p>
+                </div>
+                
+                <div class="game-card" onclick="selectGame('poker')">
+                    <div class="game-icon">🃏</div>
+                    <h3>Texas Hold'em</h3>
+                    <p>Póker</p>
+                </div>
+
+                <div class="game-card" onclick="selectGame('ruleta')">
+                    <div class="game-icon">🎡</div>
+                    <h3>Ruleta</h3>
+                    <p>Rojo o Negro</p>
+                </div>
+
+                <div class="game-card" onclick="selectGame('tragamonedas')">
+                    <div class="game-icon">🎰</div>
+                    <h3>Tragamonedas</h3>
+                    <p>Gira y gana</p>
+                </div>
+
+                <div class="game-card" onclick="selectGame('dados')">
+                    <div class="game-icon">🎲</div>
+                    <h3>Craps</h3>
+                    <p>Juego de dados</p>
+                </div>
+
+                <div class="game-card" onclick="selectGame('bacara')">
+                    <div class="game-icon">👑</div>
+                    <h3>Bacarrá</h3>
+                    <p>Clásico casino</p>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn-primary" onclick="showLogin()">Iniciar Sesión</button>
+                <button class="btn-secondary" onclick="addFunds()">+ Fichas</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h2>Acceso al Casino</h2>
+            <input type="text" id="username" placeholder="Tu nombre" class="input-field">
+            <button onclick="login()" class="btn-primary">Entrar al Casino</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
