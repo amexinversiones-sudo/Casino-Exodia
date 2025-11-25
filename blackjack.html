@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack - Casino Privado</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blackjack.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎰 BLACKJACK 21</h1>
+            <div class="user-info">
+                <span id="userName">Invitado</span>
+                <div class="balance">$<span id="balance">10,000</span></div>
+            </div>
+        </header>
+
+        <div class="blackjack-container">
+            <!-- Mesa de Blackjack -->
+            <div class="game-table">
+                <!-- Área del Crupier -->
+                <div class="dealer-area">
+                    <h3>CRUPIER</h3>
+                    <div class="cards-container" id="dealerCards">
+                        <div class="card back"></div>
+                        <div class="card back"></div>
+                    </div>
+                    <div class="score" id="dealerScore">Puntos: ?</div>
+                </div>
+
+                <!-- Separador -->
+                <div class="table-separator"></div>
+
+                <!-- Área del Jugador -->
+                <div class="player-area">
+                    <h3>TÚ - <span id="playerNameDisplay"></span></h3>
+                    <div class="cards-container" id="playerCards">
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                    <div class="score" id="playerScore">Puntos: 0</div>
+                </div>
+
+                <!-- Controles de Juego -->
+                <div class="game-controls" id="gameControls">
+                    <div class="bet-controls">
+                        <h4>HACER APUESTA</h4>
+                        <div class="bet-buttons">
+                            <button class="chip" data-amount="100" onclick="placeBet(100)">100</button>
+                            <button class="chip" data-amount="500" onclick="placeBet(500)">500</button>
+                            <button class="chip" data-amount="1000" onclick="placeBet(1000)">1,000</button>
+                            <button class="chip" data-amount="5000" onclick="placeBet(5000)">5,000</button>
+                        </div>
+                        <div class="current-bet">
+                            Apuesta actual: $<span id="currentBet">0</span>
+                        </div>
+                        <button class="btn-primary" onclick="startGame()" id="startBtn">INICIAR JUEGO</button>
+                    </div>
+
+                    <div class="action-controls" id="actionControls" style="display: none;">
+                        <h4>TU TURNO</h4>
+                        <div class="action-buttons">
+                            <button class="btn-game" onclick="playerHit()">PEDIR CARTA</button>
+                            <button class="btn-game" onclick="playerStand()">PLANTARSE</button>
+                            <button class="btn-game" onclick="playerDouble()" id="doubleBtn">DOBLAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mensajes del Juego -->
+                <div class="game-messages" id="gameMessages"></div>
+
+                <!-- Botones de Navegación -->
+                <div class="navigation-buttons">
+                    <button class="btn-secondary" onclick="resetGame()">NUEVO JUEGO</button>
+                    <button class="btn-secondary" onclick="window.location.href='index.html'">VOLVER AL CASINO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="blackjack.js"></script>
+</body>
+</html>
